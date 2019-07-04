@@ -1,0 +1,19 @@
+{
+  "name": "scool",
+  "version": "1.0.0",
+  "description": "Educational Platform for Developers with schedule structure.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landmammal/iscool.git"
+  },
+  "author": "iCreate <idevelopedreams@gmail.com> (live2create.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/landmammal/iscool/issues"
+  },
+  "homepage": "https://github.com/landmammal/iscool#readme"
+}
