@@ -1,10 +1,27 @@
 import 'dotenv/config';
-import http from 'http';
 
-const Port = process.env.PORT || 3000
-const server = http.createServer();
+const express = require('express');
+const routes  = require('./routes');
 
-server.listen(Port, (err) => {
-    if (err) throw (err) 
-    console.log("Server is live on Port: " + Port + "...");
-});
+
+
+// starting up app
+const app = express();
+
+// adding context to our request
+// app.use( (req, res, next ) => {
+//     req.context = { db: database }
+//     next();
+// } )
+
+// setting template engine
+app.set("view engine","ejs");
+
+//middleware
+app.use(express.static('./public'));
+
+
+// routing manager
+app.use(routes);
+
+

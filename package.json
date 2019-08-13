@@ -1,20 +1,32 @@
 {
   "name": "iscool",
   "version": "1.0.0",
-  "description": "Educational Platform for Developers with schedule structure.",
-  "main": "app.js",
+  "description": "website to learn",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/landmammal/iscool.git"
+    "url": "git+https://github.com/Live2create-online/iscool.git"
   },
-  "author": "iCreate <idevelopedreams@gmail.com> (live2create.me)",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/landmammal/iscool/issues"
+    "url": "https://github.com/Live2create-online/iscool/issues"
   },
-  "homepage": "https://github.com/landmammal/iscool#readme"
+  "homepage": "https://github.com/Live2create-online/iscool#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "jest": "^24.8.0"
+  }
 }
