@@ -1,11 +1,11 @@
 //route manager
-const express = require('express');
-const thisapp    = require('./thisapp');
-const user    = require('./user');
+import express from 'express';
+import courses  from './course';
+import user from './user';
 
 const router  = express.Router();
 
-router.use(thisapp);
-// router.use(user);
+router.use(courses);
+router.use(user);
 
 module.exports = router;
