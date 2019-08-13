@@ -2,8 +2,6 @@ import 'dotenv/config';
 import https from 'https';
 import app from'./app';
 
-
-
 const Port = process.env.PORT || 3000;
 
 // passing express app to handle all request

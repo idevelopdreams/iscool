@@ -5,7 +5,7 @@ const router  = express.Router();
 
 // ############### ROUTES ##############
 
-// GET home page
+// GET homepage
 router.get( '/', coursesController.home );
 
 module.exports = router
