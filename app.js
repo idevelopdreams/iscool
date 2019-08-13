@@ -24,4 +24,4 @@ app.use(express.static('./public'));
 // routing manager
 app.use(routes);
 
-
+module.exports = app;
