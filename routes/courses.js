@@ -8,4 +8,7 @@ const router  = express.Router();
 // GET homepage
 router.get( '/', coursesController.home );
 
+// GET course
+router.get( '/courses/1', coursesController.singleCourse )
+
 module.exports = router
