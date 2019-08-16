@@ -15,7 +15,25 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- plyr.js Styles -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+    <link rel="stylesheet" href="../css/course.css" />
+    <link rel="stylesheet" href="../css/course-responsive.css" />
 
     <title>Learn | Code</title>
   </head>
@@ -72,18 +90,81 @@
         </ul>
       </div>
     </nav>
-    <div class="container text-center mx-auto mt-5">
-      <!-- Content here -->
-      <h1 class="display-2">Code Skools</h1>
-      <video poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player" playsinline controls>
-        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080" />
 
-        
-     
-        <!-- Captions are optional -->
-        <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
-      </video>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Bootstrap Sidebar</h3>
+        </div>
+        <ul class="list-unstyled components">
+          <p>Dummy Heading</p>
+          <li class="active">
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+          <li>
+            <a href="#">lesson </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content" class="container text-center mx-auto mt-5">
+        <!-- Content here -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
     
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    
+                </button>
+    
+            </div>
+        </nav>
+        <video
+          poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+          id="player"
+          playsinline
+          controls
+        >
+          <source
+            src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
+            type="video/mp4"
+            size="1080"
+          />
+
+          <!-- Captions are optional -->
+          <track
+            kind="captions"
+            label="English"
+            src="../captions.en.vtt"
+            default
+            srclang="en"
+            default
+          />
+        </video>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -104,8 +185,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
-    <script>
-        const player = new Plyr('#player');
-    </script> 
+    <script src="../javascript/player.js"></script>
   </body>
 </html>
