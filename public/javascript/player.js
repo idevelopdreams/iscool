@@ -5,7 +5,7 @@ $(document).ready(function () {
     // load video player
     const player = new Plyr('#player');
 
-    // show/hide sidebar
+    // toggle sidebar
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
 
