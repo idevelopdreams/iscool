@@ -5,4 +5,9 @@ const router  = express.Router();
 const bodyParser = require('body-parser');
 const readForm = bodyParser.urlencoded({extended: false})
 
+// GET login
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
 module.exports = router
