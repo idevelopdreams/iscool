@@ -1,4 +1,6 @@
 "use strict";
+import bcrypt from "bcryptjs";
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     fullname: {
@@ -33,8 +35,25 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
-  User.associate = function(models) {
-    // associations can be defined here
+  // User.associate = function(models) {
+  //   // associations can be defined here
+  // };
+  // Creating a custom method for our User model.
+
+  // Hooks are automatic methods that run during various phases of the User Model lifecycle
+  // In this case, before a User is created, we will automatically hash their password
+  User.addHook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(
+      user.password,
+      bcrypt.genSaltSync(10),
+      null
+    );
+  });
+
+  //This will check if an unhashed password entered by the
+  //user can be compared to the hashed password stored in our database
+  User.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
   };
   return User;
 };
