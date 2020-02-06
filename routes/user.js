@@ -1,8 +1,19 @@
-const express = require('express');
-const router  = express.Router();
+import express from "express";
+import userController from "../controllers/user";
 
-//parsing form data
-const bodyParser = require('body-parser');
-const readForm = bodyParser.urlencoded({extended: false})
+const router = express.Router();
 
-module.exports = router
+// GET login
+router.get("/login", userController.userLogin);
+
+router.post("/login", userController.userSignin);
+
+router.get("/signup", userController.register);
+
+router.post("/signup", userController.signup);
+
+router.get("/logout", userController.logout);
+
+router.delete("/delete/:id", userController.deleteAccount);
+
+module.exports = router;

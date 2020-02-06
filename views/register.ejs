@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- fontawesoem -->
+    <script
+      src="https://kit.fontawesome.com/7e9c096915.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Learn | Code</title>
+  </head>
+
+  <body>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Code Skools</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Courses <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://codeskools.com/about-us-2/"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://codeskools.com/contact-us/"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mx-auto mt-5 w-50">
+      <!-- title -->
+      <div class="row">
+        <div class="col-md-12 text-center ">
+          <h2 class="display-4">Sign Up</h2>
+        </div>
+      </div>
+
+      <!-- login form -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <form action="/signup" method="POST" class="signup">
+            <div class="form-group">
+              <input
+                name="fullname"
+                type="text"
+                class="form-control"
+                id="name-input"
+                placeholder="Full Name"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                name="dob"
+                type="text"
+                class="form-control"
+                id="dob-input"
+                placeholder="mm/dd/yyyy"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="email-input"
+                placeholder="Email"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="password-input"
+                placeholder="Password"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                name="confirm-password"
+                class="form-control"
+                id="confirm-password-input"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <div
+              style="display: none"
+              id="password-alert"
+              class="alert alert-danger"
+              role="alert"
+            >
+              <i class="fas fa-exclamation-circle"></i>
+              passwords dont match
+            </div>
+            <button type="submit" class="mb-5 btn btn-primary">Sign Up</button>
+          </form>
+          <p>Or log in <a href="/login">here</a></p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <footer class="mt-5 my-5 pt-4 text-muted text-center text-small">
+            <p class="mb-1">© 2017-2019 Code Skools</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Privacy</a></li>
+              <li class="list-inline-item"><a href="#">Terms</a></li>
+              <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="../javascript/register.js"></script>
+  </body>
+</html>
