@@ -1,6 +1,6 @@
 import passport from "../config/passport";
 
-// GET /user/login
+// GET /login
 exports.userLogin = (req, res) => {
   res.render("login");
 };
@@ -25,4 +25,13 @@ exports.signup = passport.authenticate("local-signup", {
 // GET for /logout
 exports.logout = (req, res) => {
   res.redirect("/");
+};
+
+exports.deleteAccount = (req, res) => {
+  req.context.db.User.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(r => console.log(r));
+  res.redirect("/register");
 };

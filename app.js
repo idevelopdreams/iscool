@@ -4,12 +4,17 @@ import routes from "./routes";
 import passport from "passport";
 import bodyParser from "body-parser";
 import session from "express-session";
+import db from "./models";
 
 // starting up app
 const app = express();
 
 // setting template engine
 app.set("view engine", "ejs");
+app.use((req, res, next) => {
+  req.context = { db: db };
+  next();
+});
 
 //middleware
 app.use(express.static("./public"));
