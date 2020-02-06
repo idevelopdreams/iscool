@@ -35,9 +35,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
-  // User.associate = function(models) {
-  //   // associations can be defined here
-  // };
+  User.associate = function(models) {
+    // associations can be defined here
+    User.hasMany(models.Course, {
+      foreignKey: "UserId",
+      onDelete: "CASCADE"
+    });
+  };
+
   // Creating a custom method for our User model.
 
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
