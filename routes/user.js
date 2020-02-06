@@ -14,4 +14,6 @@ router.post("/signup", userController.signup);
 
 router.get("/logout", userController.logout);
 
+router.delete("/delete/:id", userController.deleteAccount);
+
 module.exports = router;
