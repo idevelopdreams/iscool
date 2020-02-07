@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Course.belongsTo(models.User, {
       foreignKey: "UserId",
-      as: "curriculum",
+      as: "creator",
       onDelete: "CASCADE"
     });
   };
