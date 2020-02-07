@@ -1,5 +1,5 @@
 "use strict";
-import bcrypt from "bcryptjs";
+// import bcrypt from "bcryptjs";
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     // associations can be defined here
     User.hasMany(models.Course, {
-      foreignKey: "UserId",
+      as: "courses",
       onDelete: "CASCADE"
     });
   };
