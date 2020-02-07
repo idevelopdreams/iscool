@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       rating: DataTypes.STRING,
       video: DataTypes.STRING,
       image: DataTypes.STRING,
+      UserId: DataTypes.UUID,
       id: {
         allowNull: false,
         primaryKey: true,
@@ -22,8 +23,9 @@ module.exports = (sequelize, DataTypes) => {
   );
   Course.associate = function(models) {
     // associations can be defined here
-    User.belongsTo(models.User, {
+    Course.belongsTo(models.User, {
       foreignKey: "UserId",
+      as: "curriculum",
       onDelete: "CASCADE"
     });
   };
