@@ -1,14 +1,17 @@
-import coursesController from '../controllers/courses';
-import express from 'express';
+import coursesController from "../controllers/courses";
+import express from "express";
 
-const router  = express.Router();
+const router = express.Router();
 
 // ############### ROUTES ##############
 
 // GET homepage
-router.get( '/', coursesController.home );
+router.get("/", coursesController.home);
 
 // GET course
-router.get( '/courses/1', coursesController.singleCourse )
+router.get("/courses/1", coursesController.singleCourse);
 
-module.exports = router
+// POST courses
+router.post("/courses", coursesController.createCourse);
+
+module.exports = router;
