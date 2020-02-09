@@ -6,10 +6,10 @@ const router = express.Router();
 // ############### ROUTES ##############
 
 // GET homepage
-router.get("/", coursesController.home);
+router.get("/courses", coursesController.allCourses);
 
 // GET course
-router.get("/courses/1", coursesController.singleCourse);
+router.get("/courses/:id", coursesController.singleCourse);
 
 // POST courses
 router.post("/courses", coursesController.createCourse);
