@@ -1,5 +1,8 @@
+const pry = require("pryjs");
+
 // GET all courses for homepage
-exports.home = (req, res) => {
+exports.allCourses = (req, res) => {
+  // this code is for the front end this is an API
   res.render("home");
 };
 
@@ -10,4 +13,15 @@ exports.singleCourse = (req, res) => {
 
 exports.createCourse = (req, res) => {
   // logic
+  req.context.db.Course.create({
+    title: req.body.title,
+    UserId: req.query.user
+  })
+    .then(course => {
+      // console.log(course);
+      res.json(course);
+    })
+    .catch(err => {
+      console.log("Error while creating course : ", err);
+    });
 };
