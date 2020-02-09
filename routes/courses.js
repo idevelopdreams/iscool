@@ -5,13 +5,16 @@ const router = express.Router();
 
 // ############### ROUTES ##############
 
-// GET homepage
+// GET courses
 router.get("/courses", coursesController.allCourses);
 
 // GET course
 router.get("/course", coursesController.singleCourse);
 
-// POST courses
+// POST course
 router.post("/courses", coursesController.createCourse);
+
+// POST course registration
+router.post("/course-registration", coursesController.courseRegistration);
 
 module.exports = router;
