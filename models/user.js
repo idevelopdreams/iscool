@@ -1,5 +1,5 @@
 "use strict";
-// import bcrypt from "bcryptjs";
+const bcrypt = require("bcryptjs");
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
@@ -40,6 +40,11 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Course, {
       as: "courses",
       onDelete: "CASCADE"
+    });
+    User.belongsToMany(models.Course, {
+      through: "CourseRegistration",
+      foreignKey: "UserId",
+      as: "classes"
     });
   };
 
