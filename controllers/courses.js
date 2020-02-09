@@ -1,6 +1,6 @@
 const pry = require("pryjs");
 
-// GET all courses for homepage
+// GET all courses
 exports.allCourses = (req, res) => {
   req.context.db.Course.findAll({ where: "", include: ["creator", "students"] })
     .then(function(courses) {
@@ -12,11 +12,20 @@ exports.allCourses = (req, res) => {
     });
 };
 
-// GET a single course
+// GET a course
 exports.singleCourse = (req, res) => {
-  res.render("course");
+  req.context.db.Course.findByPk(req.query.courseId, {
+    include: ["creator", "students"]
+  })
+    .then(function(course) {
+      res.json(course);
+    })
+    .catch(err => {
+      console.log("Error fetching Course : ", err);
+    });
 };
 
+// POST a course
 exports.createCourse = (req, res) => {
   // create users sequelize
   req.context.db.Course.create({
