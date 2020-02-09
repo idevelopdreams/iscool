@@ -14,6 +14,7 @@ exports.allCourses = (req, res) => {
 
 // GET a course
 exports.singleCourse = (req, res) => {
+  // require params: courseId
   req.context.db.Course.findByPk(req.query.courseId, {
     include: ["creator", "students"]
   })
@@ -27,10 +28,10 @@ exports.singleCourse = (req, res) => {
 
 // POST a course
 exports.createCourse = (req, res) => {
-  // create users sequelize
+  // require params: userId
   req.context.db.Course.create({
     title: req.body.title,
-    UserId: req.query.user
+    UserId: req.query.userId
   })
     .then(course => {
       // return course created
@@ -39,4 +40,18 @@ exports.createCourse = (req, res) => {
     .catch(err => {
       console.log("Error while creating course : ", err);
     });
+};
+
+// Register a User to a course
+exports.courseRegistration = (req, res) => {
+  // require params: userId, courseId
+  req.context.db.CourseRegistration.create({
+    status: false,
+    UserId: req.query.userId,
+    CourseId: req.query.courseId
+  })
+    .then(function(registration) {
+      res.json(registration);
+    })
+    .catch(err => console.log("Error while Users search : ", err));
 };
