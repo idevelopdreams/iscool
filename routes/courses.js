@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/courses", coursesController.allCourses);
 
 // GET course
-router.get("/courses/:id", coursesController.singleCourse);
+router.get("/course", coursesController.singleCourse);
 
 // POST courses
 router.post("/courses", coursesController.createCourse);
