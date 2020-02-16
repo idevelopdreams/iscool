@@ -27,11 +27,20 @@ exports.logout = (req, res) => {
   res.redirect("/");
 };
 
+// DELETE a course // require params: userId
 exports.deleteAccount = (req, res) => {
-  req.context.db.User.destroy({
+  // deleting users registration
+  req.context.db.CourseRegistration.destroy({
     where: {
-      id: req.params.id
+      UserId: req.params.userId // deletes all course registrations whose user id match user getting deleted
     }
-  }).then(r => console.log(r));
-  res.redirect("/register");
+  }).then(() => {
+    req.context.db.User.destroy({
+      where: {
+        id: req.params.userId
+      }
+    }).then(user => {
+      res.json({ message: "User Successfully deleted" });
+    });
+  });
 };
