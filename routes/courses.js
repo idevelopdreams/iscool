@@ -17,4 +17,7 @@ router.post("/courses", coursesController.createCourse);
 // POST course registration
 router.post("/course-registration", coursesController.courseRegistration);
 
+// DELETE course
+router.delete("/course", coursesController.destroyCourse);
+
 module.exports = router;
