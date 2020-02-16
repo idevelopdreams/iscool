@@ -55,3 +55,18 @@ exports.courseRegistration = (req, res) => {
     })
     .catch(err => console.log("Error while Users search : ", err));
 };
+
+// DELETE a course // require params: courseId
+exports.destroyCourse = (req, res) => {
+  req.context.db.Course.findByPk(req.query.courseId).then(course => {
+    // delete registration linked to course
+    req.context.db.CourseRegistration.destroy({
+      where: {
+        CourseId: req.query.courseId // deletes all course registrations whose course id match course getting deleted
+      }
+    }).then(() => {
+      course.destroy();
+      res.json({ message: "Course Successfully deleted" });
+    });
+  });
+};
