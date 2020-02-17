@@ -1,5 +1,3 @@
-const pry = require("pryjs");
-
 // GET all courses
 exports.allCourses = (req, res) => {
   req.context.db.Course.findAll({ where: "", include: ["creator", "students"] })
@@ -65,4 +63,16 @@ exports.destroyCourse = (req, res) => {
       res.json({ message: "Course Successfully deleted" });
     });
   });
+};
+
+// DELETE a course registration
+exports.unregister = (req, res) => {
+  // require params: id
+  req.context.db.CourseRegistration.findByPk(req.params.id).then(
+    registration => {
+      registration.destroy().then(() => {
+        res.json({ message: "Successfully Unregister" });
+      });
+    }
+  );
 };
