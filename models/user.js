@@ -1,5 +1,5 @@
 "use strict";
-import bcrypt from "bcryptjs";
+const bcrypt = require("bcryptjs");
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
@@ -35,9 +35,19 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
-  // User.associate = function(models) {
-  //   // associations can be defined here
-  // };
+  User.associate = function(models) {
+    // associations can be defined here
+    User.hasMany(models.Course, {
+      as: "courses",
+      onDelete: "CASCADE"
+    });
+    User.belongsToMany(models.Course, {
+      as: "classes",
+      through: "CourseRegistration",
+      onDelete: "CASCADE"
+    });
+  };
+
   // Creating a custom method for our User model.
 
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
