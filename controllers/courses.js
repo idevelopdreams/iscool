@@ -28,10 +28,10 @@ exports.singleCourse = (req, res) => {
 
 // POST a course
 exports.createCourse = (req, res) => {
-  // require params: userId
+  // require req.body: userId, title
   req.context.db.Course.create({
     title: req.body.title,
-    UserId: req.query.userId
+    UserId: req.body.userId
   })
     .then(course => {
       // return course created
@@ -44,28 +44,24 @@ exports.createCourse = (req, res) => {
 
 // Register a User to a course
 exports.courseRegistration = (req, res) => {
-  // require params: userId, courseId
-  req.context.db.CourseRegistration.create({
-    status: false,
-    UserId: req.query.userId,
-    CourseId: req.query.courseId
-  })
-    .then(function(registration) {
-      res.json(registration);
+  // require req.body: userId, courseId
+  req.context.db.Course.findByPk(req.body.courseId) // find course
+    .then(function(course) {
+      course
+        .addStudent(req.body.userId) // register user to course
+        .then(function() {
+          res.json({ message: "Registration Successful" });
+        })
+        .catch(err => console.log("Error while registering user: ", err));
     })
-    .catch(err => console.log("Error while Users search : ", err));
+    .catch(err => console.log("Error while looking up user: ", err));
 };
 
-// DELETE a course // require params: courseId
+// DELETE a course
 exports.destroyCourse = (req, res) => {
-  req.context.db.Course.findByPk(req.query.courseId).then(course => {
-    // delete registration linked to course
-    req.context.db.CourseRegistration.destroy({
-      where: {
-        CourseId: req.query.courseId // deletes all course registrations whose course id match course getting deleted
-      }
-    }).then(() => {
-      course.destroy();
+  // require params: id
+  req.context.db.Course.findByPk(req.params.id).then(course => {
+    course.destroy().then(() => {
       res.json({ message: "Course Successfully deleted" });
     });
   });
