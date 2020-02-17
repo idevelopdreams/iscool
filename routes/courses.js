@@ -1,14 +1,26 @@
-import coursesController from '../controllers/courses';
-import express from 'express';
+import coursesController from "../controllers/courses";
+import express from "express";
 
-const router  = express.Router();
+const router = express.Router();
 
 // ############### ROUTES ##############
 
-// GET homepage
-router.get( '/', coursesController.home );
+// GET courses
+router.get("/courses", coursesController.allCourses);
 
 // GET course
-router.get( '/courses/1', coursesController.singleCourse )
+router.get("/course", coursesController.singleCourse);
 
-module.exports = router
+// POST course
+router.post("/courses", coursesController.createCourse);
+
+// POST course registration
+router.post("/course-registration", coursesController.courseRegistration);
+
+// DELETE course registration
+router.delete("/course-registration/:id", coursesController.unregister);
+
+// DELETE course
+router.delete("/course/:id", coursesController.destroyCourse);
+
+module.exports = router;
