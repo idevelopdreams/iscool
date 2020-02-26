@@ -76,3 +76,7 @@ exports.unregister = (req, res) => {
     }
   );
 };
+
+// POST create a course module
+
+// DELETE course module
