@@ -28,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
       through: "CourseRegistration",
       onDelete: "CASCADE"
     });
+    Course.hasMany(models.Module, {
+      as: "Modules"
+    });
   };
   return Course;
 };
