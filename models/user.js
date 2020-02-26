@@ -41,6 +41,12 @@ module.exports = (sequelize, DataTypes) => {
       as: "courses",
       onDelete: "CASCADE"
     });
+    // associations can be defined here
+    User.hasMany(models.Module, {
+      as: "Modules",
+      onDelete: "CASCADE"
+    });
+
     User.belongsToMany(models.Course, {
       as: "classes",
       through: "CourseRegistration",
