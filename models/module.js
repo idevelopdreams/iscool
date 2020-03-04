@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE"
     });
 
-    Module.hasMany(models.Lessons, {
+    Module.hasMany(models.Lesson, {
       as: "Lessons",
       onDelete: "CASCADE"
     });

@@ -1,5 +1,5 @@
 const pry = require("pryjs");
-const models = require("../models");
+const models = require("./models");
 const User = models.User;
 const Course = models.Course;
 // const CourseRegistration = models.CourseRegistration;
