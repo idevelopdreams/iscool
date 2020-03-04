@@ -25,6 +25,11 @@ module.exports = (sequelize, DataTypes) => {
       as: "creator",
       onDelete: "CASCADE"
     });
+
+    Module.hasMany(models.Lessons, {
+      as: "Lessons",
+      onDelete: "CASCADE"
+    });
   };
   return Module;
 };
