@@ -17,4 +17,7 @@ router.get("/module", moduleController.createModule);
 // DELETE module
 router.delete("/module/:id", moduleController.destroyModule);
 
+// POST module-lesson
+router.post("/module-lesson", moduleController.createModuleLesson);
+
 module.exports = router;
