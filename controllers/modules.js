@@ -42,5 +42,11 @@ exports.createModule = (req, res) => {
 };
 
 // DELETE a module
-
-// DELETE a course registration
+exports.destroyModule = (req, res) => {
+  // require params: id
+  req.context.db.Module.findByPk(req.params.id).then(modul => {
+    modul.destroy().then(() => {
+      res.json({ message: "Module Successfully deleted" });
+    });
+  });
+};
