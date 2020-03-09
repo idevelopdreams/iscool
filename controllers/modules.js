@@ -50,3 +50,32 @@ exports.destroyModule = (req, res) => {
     });
   });
 };
+
+// POST a lesson inside a module
+exports.createModuleLesson = (req, res) => {
+  // require req.body: userId, courseId
+  const lesson = {
+    UserId: req.body.userId, // change this to current user logged in
+    name: req.body.name,
+    concepts: req.body.concepts,
+    video: req.body.video,
+    cover: req.body.cover
+  };
+  req.context.db.Module.findByPk(req.body.moduleId) // find module
+    .then(m => {
+      req.context.db.Lesson.create(lesson)
+        .then(l => {
+          m.addLesson(l) // associate lesson with module
+            .then(() => {
+              res.json({ message: "Lesson successfully created", lesson: l });
+            })
+            .catch(err =>
+              console.log("Error while adding lesson inside module: ", err)
+            );
+        })
+        .catch(err => {
+          console.log("Error while creating lesson: ", err);
+        });
+    })
+    .catch(err => console.log("Error while looking up module: ", err));
+};
