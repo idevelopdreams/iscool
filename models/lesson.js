@@ -1,6 +1,12 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const Lesson = sequelize.define("Lesson", {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4
+    },
     name: DataTypes.STRING,
     concepts: DataTypes.STRING,
     video: DataTypes.STRING,
@@ -14,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE"
     });
     Lesson.belongsTo(models.Module, {
-      foreignKey: "ModuleID",
+      foreignKey: "ModuleId",
       as: "module",
       onDelete: "CASCADE"
     });
