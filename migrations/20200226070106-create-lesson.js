@@ -4,9 +4,24 @@ module.exports = {
     return queryInterface.createTable("Lessons", {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
+      },
+      UserId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "Users",
+          key: "id"
+        }
+      },
+      ModuleId: {
+        type: Sequelize.UUID,
+        allowNull: false,
+        references: {
+          model: "Modules",
+          key: "id"
+        }
       },
       name: {
         type: Sequelize.STRING
