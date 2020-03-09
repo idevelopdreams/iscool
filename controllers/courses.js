@@ -40,6 +40,16 @@ exports.createCourse = (req, res) => {
     });
 };
 
+// DELETE a course
+exports.destroyCourse = (req, res) => {
+  // require params: id
+  req.context.db.Course.findByPk(req.params.id).then(course => {
+    course.destroy().then(() => {
+      res.json({ message: "Course Successfully deleted" });
+    });
+  });
+};
+
 // Register a User to a course
 exports.courseRegistration = (req, res) => {
   // require req.body: userId, courseId
@@ -55,16 +65,6 @@ exports.courseRegistration = (req, res) => {
     .catch(err => console.log("Error while looking up user: ", err));
 };
 
-// DELETE a course
-exports.destroyCourse = (req, res) => {
-  // require params: id
-  req.context.db.Course.findByPk(req.params.id).then(course => {
-    course.destroy().then(() => {
-      res.json({ message: "Course Successfully deleted" });
-    });
-  });
-};
-
 // DELETE a course registration
 exports.unregister = (req, res) => {
   // require params: id
@@ -78,5 +78,35 @@ exports.unregister = (req, res) => {
 };
 
 // POST create a course module
+exports.createCourseModule = (req, res) => {
+  const m = {
+    UserId: req.body.userId, // change this to current user logged in
+    title: req.body.title,
+    overview: req.body.overview
+  };
+  req.context.db.Course.findByPk(req.body.courseId) // find course
+    .then(course => {
+      req.context.db.Module.create(m)
+        .then(module => {
+          course
+            .addModule(module)
+            .then(() => {
+              // return module created
+              res.json({
+                message: "Course module created Successfully ",
+                module: module
+              });
+            })
+            .catch(err => {
+              console.log("Error associating course to module: ", err);
+            });
+        })
+        .catch(err => {
+          console.log("Error while creating module: ", err);
+        });
+    })
+    .catch(err => console.log("Error while looking up Course: ", err));
 
+  // require req.body: userId, title
+};
 // DELETE course module
