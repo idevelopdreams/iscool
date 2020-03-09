@@ -14,4 +14,7 @@ router.get("/module", moduleController.singleModule);
 // Post module
 router.get("/module", moduleController.createModule);
 
+// DELETE module
+router.delete("/module/:id", moduleController.destroyModule);
+
 module.exports = router;
