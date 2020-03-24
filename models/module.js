@@ -7,8 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4
     },
-    title: DataTypes.STRING,
-    overview: DataTypes.TEXT,
     CourseId: {
       type: DataTypes.UUID,
       allowNull: true,
@@ -16,7 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         model: "Courses",
         key: "id"
       }
-    }
+    },
+    title: DataTypes.STRING,
+    overview: DataTypes.TEXT
   });
   Module.associate = function(models) {
     // associations can be defined here
