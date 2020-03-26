@@ -5,6 +5,7 @@ import passport from "passport";
 import bodyParser from "body-parser";
 import session from "express-session";
 import db from "./models";
+import cookieParser from "cookie-parser";
 
 // starting up app
 const app = express();
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser()); // required before session.
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(
