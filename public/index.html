@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/7e9c096915.js"
+      crossorigin="anonymous"
+      async
+    ></script>
+
+    <title>Learn | Code</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Code Skools</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Courses <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://codeskools.com/about-us-2/"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://codeskools.com/contact-us/"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search ..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+        <ul class="nav ml-4 ml-auto">
+          <li class="nav-item">
+            <a
+              href=""
+              class="btn btn-primary nav-link my-3 waves-effect waves-light"
+              data-toggle="modal"
+              data-target="#modalLRForm"
+              >LogIn/Register</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--Modal: Login / Register Form-->
+    <div
+      class="modal fade"
+      id="modalLRForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Modal cascading tabs-->
+          <div class="modal-c-tabs">
+            <!-- Nav tabs -->
+            <ul
+              class="nav nav-tabs md-tabs tabs-2 light-blue darken-3"
+              role="tablist"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  data-toggle="tab"
+                  href="#panel7"
+                  role="tab"
+                  ><i class="fas fa-user mr-1"></i> Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"
+                  ><i class="fas fa-user-plus mr-1"></i> Register</a
+                >
+              </li>
+            </ul>
+
+            <!-- Tab panels -->
+            <div class="tab-content">
+              <!--Panel 7-->
+              <div
+                class="tab-pane fade in show active"
+                id="panel7"
+                role="tabpanel"
+              >
+                <!--Body-->
+                <!-- login form -->
+                <div class="modal-body mt-4">
+                  <form action="/login" method="POST">
+                    <div class="md-form form-sm mb-5">
+                      <i class="fas fa-envelope prefix"></i>
+                      <input
+                        type="email"
+                        id="userEmail"
+                        placeholder="email"
+                        class="form-control form-control-sm validate"
+                        required
+                      />
+                    </div>
+
+                    <div class="md-form form-sm mb-4">
+                      <i class="fas fa-lock prefix"></i>
+                      <input
+                        type="password"
+                        id="userPassword"
+                        placeholder="password"
+                        class="form-control form-control-sm validate"
+                        required
+                      />
+                    </div>
+                    <div class="text-center mt-2">
+                      <button class="btn btn-info" id="login-form">
+                        Log in
+                        <i class="fas fa-sign-in ml-1"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                  <div class="options text-center text-md-right mt-1">
+                    <p>
+                      Not a member?
+                      <a
+                        style="display: inline;"
+                        class="nav-link"
+                        data-toggle="tab"
+                        href="#panel8"
+                        role="tab"
+                        >Sign Up</a
+                      >
+                    </p>
+                    <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-info waves-effect ml-auto"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+              <!--/.Panel 7-->
+
+              <!--Panel 8-->
+              <div class="tab-pane fade" id="panel8" role="tabpanel">
+                <!--Body-->
+                <!-- registration form -->
+                <div class="modal-body mt-4">
+                  <form action="/signup" method="POST">
+                    <div class="md-form form-sm mb-4">
+                      <i class="fas fa-id-card"></i>
+                      <input
+                        name="fullname"
+                        type="text"
+                        class="form-control form-control-sm validate"
+                        id="name-input"
+                        placeholder="Full Name"
+                      />
+                    </div>
+
+                    <div class="md-form form-sm mb-4">
+                      <i class="fas fa-birthday-cake "></i>
+                      <input
+                        name="dob"
+                        type="text"
+                        class="form-control form-control-sm validate"
+                        id="dob-input"
+                        placeholder="mm/dd/yyyy"
+                      />
+                    </div>
+
+                    <div class="md-form form-sm mb-5">
+                      <i class="fas fa-envelope prefix"></i>
+                      <input
+                        name="email"
+                        type="email"
+                        id="email-input"
+                        placeholder="email"
+                        class="form-control form-control-sm validate"
+                      />
+                    </div>
+
+                    <div class="md-form form-sm mb-5">
+                      <i class="fas fa-lock prefix"></i>
+                      <input
+                        name="password"
+                        type="password"
+                        id="password-input"
+                        placeholder="password"
+                        class="form-control form-control-sm validate"
+                      />
+                    </div>
+
+                    <div class="md-form form-sm mb-4">
+                      <i class="fas fa-lock prefix"></i>
+                      <input
+                        type="password"
+                        placeholder="confirm password"
+                        id="confirm-password-input"
+                        class="form-control form-control-sm validate"
+                      />
+                    </div>
+                    <!-- alert confirm password not matching -->
+                    <div
+                      style="display: none"
+                      id="password-alert"
+                      class="alert alert-danger"
+                      role="alert"
+                    >
+                      <i class="fas fa-exclamation-circle"></i>
+                      passwords dont match
+                    </div>
+
+                    <div class="text-center form-sm mt-2">
+                      <button class="btn btn-info" id="registration-form">
+                        Sign up <i class="fas fa-sign-in ml-1"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                  <div class="options text-right">
+                    <p class="pt-1">
+                      Already have an account?
+                      <a
+                        style="display: inline;"
+                        data-toggle="tab"
+                        href="#panel7"
+                        role="tab"
+                        class="blue-text"
+                        >Log In</a
+                      >
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-info waves-effect ml-auto"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+              <!--/.Panel 8-->
+            </div>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <div class="container text-center mx-auto mt-5">
+      <!-- Content here -->
+      <h1 class="display-2">Code Skools</h1>
+      <p class="lead mb-5">
+        Learning the technology of tomorrow through creation.
+      </p>
+
+      <p class="lead mt-5">
+        Courses
+      </p>
+
+      <div class="card-deck mb-5">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+            style="height: 50%;"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Web Development 101</h5>
+            <p class="card-text">
+              Build complete Web solutions. Master client and server side
+              developement with five hands on projects.
+            </p>
+            <a href="/login"
+              ><button type="button" class="btn btn-primary">
+                Start Course
+              </button></a
+            >
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://www.itstarterseries.com/wp-content/uploads/2018/05/how-to-become-a-game-developer.png"
+            class="card-img-top"
+            style="height: 50%;"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Game Development Crash Course</h5>
+            <p class="card-text">
+              Learn how to code by making games from a tiny game engine like
+              phaser to the more robust power house of Unity3D.
+            </p>
+            <a href="/login"
+              ><button type="button" class="btn btn-primary">
+                Start Course
+              </button></a
+            >
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://www.cryptotapas.com/wp-content/uploads/2019/03/blockchain.png"
+            style="height: 50%;"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Blockchain Fundementals</h5>
+            <p class="card-text">
+              Build a blockchain from sratch and understand how to create your
+              own cryptocurrency and what makes them so valuable.
+            </p>
+            <a href="/login"
+              ><button type="button" class="btn btn-primary">
+                Start Course
+              </button></a
+            >
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <hr class="mt-5" />
+
+      <!-- Footer -->
+      <footer class="my-5 pt-4 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2019 Code Skools</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- registration form validation -->
+    <script src="/javascript/register.js" async></script>
+  </body>
+</html>
