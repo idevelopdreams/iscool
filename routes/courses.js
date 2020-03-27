@@ -14,13 +14,16 @@ router.get("/course", coursesController.singleCourse);
 // POST course
 router.post("/courses", coursesController.createCourse);
 
+// DELETE course
+router.delete("/course/:id", coursesController.destroyCourse);
+
 // POST course registration
 router.post("/course-registration", coursesController.courseRegistration);
 
 // DELETE course registration
 router.delete("/course-registration/:id", coursesController.unregister);
 
-// DELETE course
-router.delete("/course/:id", coursesController.destroyCourse);
+// POST course module
+router.post("/course-module", coursesController.createCourseModule);
 
 module.exports = router;
