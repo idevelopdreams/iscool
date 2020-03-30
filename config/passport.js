@@ -43,7 +43,8 @@ passport.use(
             fullname: req.body.fullname,
             DOB: req.body.dob,
             email: email,
-            password: password
+            password: password,
+            organization: req.body.code
           }).then(function(newUser) {
             if (!newUser) {
               return done(null, false);
