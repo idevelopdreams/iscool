@@ -39,33 +39,33 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" id="logo" href="#">Code Skools</a>
+      <a class="navbar-brand" id="logo" href="/">Code Skools</a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="/"
               >Courses <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a
+              class="nav-link"
+              href="http://codeskools.com/about-us-2/"
+              target="_blank"
+              >About</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a
+              class="nav-link"
+              href="http://codeskools.com/contact-us/"
+              target="_blank"
+              >Contact</a
+            >
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search ..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+
         <ul class="navbar-nav ml-auto ">
           <li class="nav-item dropdown pr-4">
             <a
@@ -76,16 +76,13 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >
-              <img
-                src="../img/rog copy.png"
-                class="img-circle special-img"
-              />Roger Rodriguez
+              ><i class="fas fa-user-astronaut"></i>
+              <%= user.fullname.toUpperCase() %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Dashboard</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="/logout">Logout</a>
             </div>
           </li>
         </ul>
@@ -99,85 +96,358 @@
           <h3>Code Skools</h3>
         </div>
         <ul class="list-unstyled components">
+          <!-- Course Title -->
           <p class="mb-0">Web Developement 101</p>
+          <!-- Course progress -->
           <div class="progress mr-4 ml-2 mb-1">
             <div
               class="progress-bar"
               role="progressbar"
-              style="width: 25%;"
-              aria-valuenow="25"
+              style="width: 5%;"
+              aria-valuenow="5"
               aria-valuemin="0"
               aria-valuemax="100"
+              style="color: greenyellow;"
             >
-              25%
+              5%
             </div>
           </div>
+          <!-- Course modules -->
           <li class="active">
             <a
               href="#module1Submenu"
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle"
-              >Module 1
+              >Unit 0 - Installation
               <i class="ml-2 fa-lg fas fa-check-circle text-success"></i
             ></a>
             <ul class="collapse list-unstyled" id="module1Submenu">
               <li>
                 <a href="#"
-                  >lesson <i class="ml-2 fas fa-check-circle text-success"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#"
-                  >lesson <i class="ml-2 fas fa-check-circle text-success"></i
+                  >Installation Guide
+                  <i class="ml-2 fas fa-check-circle text-success"></i
                 ></a>
               </li>
             </ul>
           </li>
+
           <li class="active">
             <a
               href="#module2Submenu"
               data-toggle="collapse"
               aria-expanded="false"
-              class="dropdown-toggle"
-              >Module 2 <i class="ml-2 fa-lg fas fa-circle"></i
+              class="dropdown-toggle fit-me"
+              >Unit 1 - HTML, CSS, & GIT <i class="ml-2 fa-lg fas fa-circle"></i
             ></a>
             <ul class="collapse list-unstyled" id="module2Submenu">
               <li>
                 <a href="#"
-                  >lesson <i class="ml-2 fas fa-check-circle text-success"></i
+                  >Road to Learning
+                  <i class="ml-2 fas fa-check-circle text-success"></i
                 ></a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#"
+                  >Course Structure
+                  <i class="ml-2 fas fa-check-circle text-success"></i
+                ></a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#"
+                  >Modern Web
+                  <i class="ml-2 fas fa-check-circle text-success"></i
+                ></a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#">Computers & Console </a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#">Hello HTML</a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#">Git'n Pro</a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#">Hello CSS</a>
               </li>
               <li>
-                <a href="#">lesson</a>
+                <a href="#">Heroes of CSS</a>
               </li>
             </ul>
           </li>
+
           <li class="active">
             <a
               href="#module3Submenu"
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle"
-              >Module 3 <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+              >Unit 2 - CSS and Bootstrap
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module4Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 3 - Intro to JavaScript
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module4Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module4Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 4 - Intro to jQuery
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module4Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module5Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 5 - JS Timers, Review
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module5Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module6Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 6 - APIs and AJAX
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module6Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module7Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 7 - Intro to Storage
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module7Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module2Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 8 - API Project Pt 1
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module2Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module8Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 9 - API Project Pt 2
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module8Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module9Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 10 - Intro to Node.JS
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module9Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module10Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 11 - Advance JS
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module10Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module2Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 12 - Intro to MySQL
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module2Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module11Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 13 - Express Servers
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module11Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module12Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 14 - Templating
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module12Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module13Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 15 - Sequelize
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module13Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module14Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 16 - Node Project Pt 1
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module14Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module15Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 17 - Node Project Pt 2
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module15Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module16Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 18 - MongoDB
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module16Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module17Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Unit 19 - ReactJS
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module17Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module2Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+            >
+              Unit 20 - React, MERN
+
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module2Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module3Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+            >
+              Unit 21 - CS Fundamentals
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module3Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+            >
+              Unit 22 - Final Projects Pt1
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
+            ></a>
+            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
+          </li>
+
+          <li class="active">
+            <a
+              href="#module3Submenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+            >
+              Unit 23 - Final Projects Pt2
+              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
             ></a>
             <ul class="collapse list-unstyled" id="module3Submenu"></ul>
           </li>
@@ -186,7 +456,7 @@
 
       <!-- Page Content -->
       <div id="content" class="container text-center mx-auto mt-5">
-        <!-- Content here -->
+        <!-- side panel toggle -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <button type="button" id="sidebarCollapse" class="btn btn-info">
@@ -194,23 +464,24 @@
             </button>
           </div>
         </nav>
+        <!-- Player -->
         <video
-          poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+          poster="/img/codeskool-vid-cover.png"
           id="player"
           playsinline
           controls
         >
           <source
-            src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
+            src="https://storage.cloud.google.com/video_lessons/intro_computer_console.m4v"
             type="video/mp4"
-            size="1080"
+            size="720*30"
           />
 
           <!-- Captions are optional -->
           <track
             kind="captions"
             label="English"
-            src="../captions.en.vtt"
+            src=""
             default
             srclang="en"
             default
