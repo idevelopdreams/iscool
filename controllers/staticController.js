@@ -12,5 +12,5 @@ exports.register = (req, res) => {
 
 // GET a single course
 exports.singleCourse = (req, res) => {
-  res.render("course");
+  res.render("course", { user: req.session.passport.user });
 };
