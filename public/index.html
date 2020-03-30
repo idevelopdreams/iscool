@@ -22,7 +22,6 @@
     <script
       src="https://kit.fontawesome.com/7e9c096915.js"
       crossorigin="anonymous"
-      async
     ></script>
 
     <title>Learn | Code</title>
@@ -34,17 +33,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="/"
               >Courses <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://codeskools.com/about-us-2/"
+            <a
+              class="nav-link"
+              href="http://codeskools.com/about-us-2/"
+              target="_blank"
               >About</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://codeskools.com/contact-us/"
+            <a
+              class="nav-link"
+              href="http://codeskools.com/contact-us/"
+              target="_blank"
               >Contact</a
             >
           </li>
@@ -123,10 +128,12 @@
                     <div class="md-form form-sm mb-5">
                       <i class="fas fa-envelope prefix"></i>
                       <input
+                        name="email"
                         type="email"
-                        id="userEmail"
-                        placeholder="email"
-                        class="form-control form-control-sm validate"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Email"
                         required
                       />
                     </div>
@@ -134,10 +141,11 @@
                     <div class="md-form form-sm mb-4">
                       <i class="fas fa-lock prefix"></i>
                       <input
+                        name="password"
                         type="password"
-                        id="userPassword"
-                        placeholder="password"
-                        class="form-control form-control-sm validate"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                        placeholder="Password"
                         required
                       />
                     </div>
@@ -204,7 +212,7 @@
                       />
                     </div>
 
-                    <div class="md-form form-sm mb-5">
+                    <div class="md-form form-sm mb-4">
                       <i class="fas fa-envelope prefix"></i>
                       <input
                         name="email"
@@ -216,6 +224,20 @@
                     </div>
 
                     <div class="md-form form-sm mb-5">
+                      <i class="fas fa-barcode"></i>
+                      <input
+                        id="organization"
+                        name="code"
+                        type="text"
+                        class="form-control"
+                        placeholder="Course Code"
+                      />
+                      <small id="emailHelp" class="form-text text-muted"
+                        >Check with your organization for this code.</small
+                      >
+                    </div>
+
+                    <div class="md-form form-sm mb-4">
                       <i class="fas fa-lock prefix"></i>
                       <input
                         name="password"
