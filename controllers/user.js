@@ -7,8 +7,8 @@ exports.userLogin = (req, res) => {
 
 // POST user login
 exports.userSignin = passport.authenticate("local-login", {
-  successRedirect: "/",
-  failureRedirect: "/login"
+  successRedirect: "/courses/1",
+  failureRedirect: "/user/login"
 });
 
 // GET user signup
@@ -18,8 +18,8 @@ exports.register = (req, res) => {
 
 // POST user signup
 exports.signup = passport.authenticate("local-signup", {
-  successRedirect: "/",
-  failureRedirect: "/signup"
+  successRedirect: "/courses/1",
+  failureRedirect: "/user/signup"
 });
 
 // GET for /logout

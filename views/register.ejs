@@ -82,14 +82,25 @@
             </div>
             <div class="form-group">
               <input
-                name="email"
+                id="email-input"
                 type="email"
                 class="form-control"
-                id="email-input"
                 placeholder="Email"
               />
               <small id="emailHelp" class="form-text text-muted"
                 >We'll never share your email with anyone else.</small
+              >
+            </div>
+            <div class="form-group">
+              <input
+                id="organization"
+                name="code"
+                type="text"
+                class="form-control"
+                placeholder="Course Code"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >Check with your organization for this code.</small
               >
             </div>
             <div class="form-group">
@@ -101,7 +112,9 @@
                 placeholder="Password"
               />
             </div>
+
             <div class="form-group">
+              <i class="fas fa-lock prefix"></i>
               <input
                 type="password"
                 name="confirm-password"
@@ -140,5 +153,8 @@
       </div>
     </div>
     <script src="../javascript/register.js"></script>
+    <script>
+      alert("Verify Your Course Code.");
+    </script>
   </body>
 </html>
