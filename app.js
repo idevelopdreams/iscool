@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import db from "./models";
 import cookieParser from "cookie-parser";
+import { render } from "ejs";
 
 // starting up app
 const app = express();
