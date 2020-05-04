@@ -13,7 +13,7 @@ exports.allCourses = (req, res) => {
 // GET a course
 exports.singleCourse = (req, res) => {
   // require params: courseId
-  req.context.db.Course.findByPk(req.query.courseId, {
+  req.context.db.Course.findByPk(req.params.id, {
     include: ["creator", "students"]
   })
     .then(function(course) {
