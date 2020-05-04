@@ -94,6 +94,7 @@ const data = [
     video:
       "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d2e44186-607e-4ea4-bce0-abb100dd9547&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
+    type: "video",
     createdAt: new Date(),
     updatedAt: new Date(),
   }, //Module 3
@@ -106,6 +107,7 @@ const data = [
     video:
       "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=70298d16-f2c1-4221-a2ee-abb101002fdb&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
+    type: "video",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -120,6 +122,7 @@ const data = [
 
     video: "",
     cover: "some cover",
+    type: "video",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -132,6 +135,7 @@ const data = [
     concepts: "the concept of JavaScript Functions, JavaScript Object",
     video: "",
     cover: "some cover",
+    type: "video",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -146,6 +150,7 @@ const data = [
 
     video: "",
     cover: "some cover",
+    type: "video",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
