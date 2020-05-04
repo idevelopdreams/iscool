@@ -77,7 +77,8 @@ const data = [
     name: "Down & Dirty CSS",
     concepts:
       "To recap the basic topics covered to date, To offer a conceptual introduction to CSS reset and downloadable style sheets, To work with Google Developer tools for site inspection, To utilize Github Pages for website deployment",
-    video: "",
+    video:
+      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d6da5918-51cb-422b-a848-abb100bf9552&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
     type: "video",
     createdAt: new Date(),
@@ -90,7 +91,8 @@ const data = [
     name: "Bootstrap Layouts and Responsive Design ",
     concepts:
       "To gain a conceptual understanding of the role of grid-based web design in modern web development ,To utilize the Bootstrap grid system to create complete web layouts,To understand the concept of mobile responsive web design and the use of media queries to achieve it",
-    video: "",
+    video:
+      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d2e44186-607e-4ea4-bce0-abb100dd9547&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -101,8 +103,8 @@ const data = [
     ModuleID: "56fff529-0164-4896-a628-ab369dad9893",
     name: "Joys of JavaScript",
     concepts: "basics of JavaScript,Data types,Data structures",
-
-    video: "",
+    video:
+      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=70298d16-f2c1-4221-a2ee-abb101002fdb&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
     createdAt: new Date(),
     updatedAt: new Date(),
