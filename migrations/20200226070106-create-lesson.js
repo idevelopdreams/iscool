@@ -46,7 +46,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      file: { type: DataTypes.STRING },
+      file: { type: Sequelize.STRING },
     });
   },
   down: (queryInterface, Sequelize) => {
