@@ -10,6 +10,7 @@ router.get("/user/login", staticController.userLogin);
 
 router.get("/user/signup", staticController.register);
 
-router.get("/courses/1", isAuthenticated, staticController.singleCourse);
+// dummy route
+router.get("/courses/1", staticController.singleCourse);
 
 module.exports = router;
