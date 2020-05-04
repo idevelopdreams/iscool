@@ -6,46 +6,50 @@ module.exports = {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4
+        defaultValue: Sequelize.UUIDV4,
       },
       UserId: {
         type: Sequelize.UUID,
         references: {
           model: "Users",
-          key: "id"
-        }
+          key: "id",
+        },
       },
       ModuleId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: "Modules",
-          key: "id"
-        }
+          key: "id",
+        },
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       concepts: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       video: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       cover: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      },
+      type: {
+        type: DataTypes.STRING,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
+      file: { type: DataTypes.STRING },
     });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable("Lessons");
-  }
+  },
 };
