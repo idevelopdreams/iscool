@@ -44,16 +44,16 @@ const data = [
     updatedAt: new Date(),
   },
   //Module 4
-  {
-    id: "56fff529-0164-4896-a628-ab369dad9894",
-    UserId: "46fff529-0164-4896-a628-ab369dad4889",
-    title: "jQuery Begins",
-    overview:
-      "To gain a cursory understanding of the jQuery library, To understand the steps needed to utilize the jQuery library to manipulate the DOM.",
-    CourseId: "56fff529-0164-4896-a628-ab369dad4889",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
+  // {
+  //   id: "56fff529-0164-4896-a628-ab369dad9894",
+  //   UserId: "46fff529-0164-4896-a628-ab369dad4889",
+  //   title: "jQuery Begins",
+  //   overview:
+  //     "To gain a cursory understanding of the jQuery library, To understand the steps needed to utilize the jQuery library to manipulate the DOM.",
+  //   CourseId: "56fff529-0164-4896-a628-ab369dad4889",
+  //   createdAt: new Date(),
+  //   updatedAt: new Date(),
+  // },
 ];
 
 module.exports = data;

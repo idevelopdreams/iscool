@@ -27,7 +27,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       concepts: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       video: {
         type: Sequelize.STRING,
