@@ -22,7 +22,7 @@ const data = [
     concepts:
       "To introduce basic terminal/bash commands, To create a basic HTML page",
     video:
-      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8c5a44f5-6ab7-4f36-a89e-ab19004e0e5d&autoplay=false&offerviewer=false&showtitle=false&showbrand=false&start=0&interactivity=all",
+      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8c5a44f5-6ab7-4f36-a89e-ab19004e0e5d&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
     type: "video",
     createdAt: new Date(),
@@ -119,8 +119,8 @@ const data = [
     name: "Jumping for JavaScript ",
     concepts:
       "To introduce students to the concept of for loops, arrays, if/else statements,common programming tools to create a Rock-Paper-Scissors game.",
-
-    video: "",
+    video:
+      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=0511977e-c43e-4022-9fb3-abb1010577d9&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
     type: "video",
     createdAt: new Date(),
@@ -133,27 +133,14 @@ const data = [
     ModuleID: "56fff529-0164-4896-a628-ab369dad9893",
     name: "JavaScript Juggernauts",
     concepts: "the concept of JavaScript Functions, JavaScript Object",
-    video: "",
+    video:
+      "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=010dce05-650a-4c43-a911-abb10108a1ac&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&start=0&interactivity=all",
     cover: "some cover",
     type: "video",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   //module 4
-  {
-    id: "56fff529-0164-4896-a628-ab369dad4899",
-    UserId: "46fff529-0164-4896-a628-ab369dad4889",
-    ModuleID: "56fff529-0164-4896-a628-ab369dad9894",
-    name: "JavaScript Juggernauts",
-    concepts:
-      "In this class, we will be introducing students to the concept of JavaScript Functions and of JavaScript Object",
-
-    video: "",
-    cover: "some cover",
-    type: "video",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
 ];
 
 module.exports = data;
