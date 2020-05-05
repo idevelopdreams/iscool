@@ -5,24 +5,26 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true,
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4
+      defaultValue: DataTypes.UUIDV4,
     },
     name: DataTypes.STRING,
-    concepts: DataTypes.STRING,
+    type: DataTypes.STRING,
+    concepts: DataTypes.TEXT,
     video: DataTypes.STRING,
-    cover: DataTypes.STRING
+    cover: DataTypes.STRING,
+    file: DataTypes.STRING,
   });
-  Lesson.associate = function(models) {
+  Lesson.associate = function (models) {
     // associations can be defined here
     Lesson.belongsTo(models.User, {
       foreignKey: "UserId",
       as: "creator",
-      onDelete: "CASCADE"
+      onDelete: "CASCADE",
     });
     Lesson.belongsTo(models.Module, {
       foreignKey: "ModuleId",
       as: "module",
-      onDelete: "CASCADE"
+      onDelete: "CASCADE",
     });
   };
   return Lesson;

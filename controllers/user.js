@@ -24,6 +24,7 @@ exports.signup = passport.authenticate("local-signup", {
 
 // GET for /logout
 exports.logout = (req, res) => {
+  req.logout();
   res.redirect("/");
 };
 

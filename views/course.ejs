@@ -29,16 +29,20 @@
       integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/7e9c096915.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- plyr.js Styles -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+
     <link rel="stylesheet" href="../css/course.css" />
     <link rel="stylesheet" href="../css/course-responsive.css" />
 
     <title>Learn | Code</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light-top">
       <a class="navbar-brand" id="logo" href="/">Code Skools</a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -66,7 +70,7 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav ml-auto ">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown pr-4">
             <a
               class="nav-link dropdown-toggle"
@@ -77,7 +81,7 @@
               aria-haspopup="true"
               aria-expanded="false"
               ><i class="fas fa-user-astronaut"></i>
-              <%= user.fullname.toUpperCase() %>
+              <%= user %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Dashboard</a>
@@ -91,13 +95,13 @@
 
     <div class="wrapper">
       <!-- Sidebar -->
-      <nav id="sidebar">
+      <nav id="sidebar" class="active">
         <div class="sidebar-header">
           <h3>Code Skools</h3>
         </div>
         <ul class="list-unstyled components">
           <!-- Course Title -->
-          <p class="mb-0">Web Developement 101</p>
+          <p class="mb-0"><%= course.title%></p>
           <!-- Course progress -->
           <div class="progress mr-4 ml-2 mb-1">
             <div
@@ -113,390 +117,151 @@
             </div>
           </div>
           <!-- Course modules -->
-          <li class="active">
-            <a
-              href="#module1Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 0 - Installation
-              <i class="ml-2 fa-lg fas fa-check-circle text-success"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module1Submenu">
-              <li>
-                <a href="#"
-                  >Installation Guide
-                  <i class="ml-2 fas fa-check-circle text-success"></i
-                ></a>
-              </li>
-            </ul>
-          </li>
+
+          <% for(let i = 0; i < modules.length; i++){ %> <% let module =
+          modules[i] %>
 
           <li class="active">
             <a
-              href="#module2Submenu"
+              href="#module<%= i %>Submenu"
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle fit-me"
-              >Unit 1 - HTML, CSS, & GIT <i class="ml-2 fa-lg fas fa-circle"></i
+              >Unit <%= i %> - <%= module.title %>
+              <i class="ml-2 fa-lg fas fa-check-circle text-success"></i
             ></a>
-            <ul class="collapse list-unstyled" id="module2Submenu">
+            <ul class="collapse list-unstyled" id="module<%= i %>Submenu">
+              <% for(let x = 0; x < module.Lessons.length; x++){ %> <% let
+              lesson = module.Lessons[x] %>
               <li>
-                <a href="#"
-                  >Road to Learning
+                <a
+                  href="#"
+                  class="lessonChosen"
+                  data-video="<%= lesson.video %>"
+                  data-main-ideas="<%= lesson.concepts %>"
+                  data-lesson-title="<%= lesson.name %>"
+                  data-lesson-type="<%= lesson.type %>"
+                  ><%= lesson.name %>
                   <i class="ml-2 fas fa-check-circle text-success"></i
                 ></a>
               </li>
-              <li>
-                <a href="#"
-                  >Course Structure
-                  <i class="ml-2 fas fa-check-circle text-success"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#"
-                  >Modern Web
-                  <i class="ml-2 fas fa-check-circle text-success"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#">Computers & Console </a>
-              </li>
-              <li>
-                <a href="#">Hello HTML</a>
-              </li>
-              <li>
-                <a href="#">Git'n Pro</a>
-              </li>
-              <li>
-                <a href="#">Hello CSS</a>
-              </li>
-              <li>
-                <a href="#">Heroes of CSS</a>
-              </li>
+              <% } %>
             </ul>
           </li>
-
-          <li class="active">
-            <a
-              href="#module3Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 2 - CSS and Bootstrap
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module4Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 3 - Intro to JavaScript
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module4Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module4Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 4 - Intro to jQuery
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module4Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module5Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 5 - JS Timers, Review
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module5Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module6Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 6 - APIs and AJAX
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module6Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module7Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 7 - Intro to Storage
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module7Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module2Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 8 - API Project Pt 1
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module2Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module8Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 9 - API Project Pt 2
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module8Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module9Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 10 - Intro to Node.JS
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module9Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module10Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 11 - Advance JS
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module10Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module2Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 12 - Intro to MySQL
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module2Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module11Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 13 - Express Servers
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module11Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module12Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 14 - Templating
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module12Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module13Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 15 - Sequelize
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module13Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module14Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 16 - Node Project Pt 1
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module14Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module15Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 17 - Node Project Pt 2
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module15Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module16Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 18 - MongoDB
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module16Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module17Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Unit 19 - ReactJS
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module17Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module2Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-            >
-              Unit 20 - React, MERN
-
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module2Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module3Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-            >
-              Unit 21 - CS Fundamentals
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module3Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-            >
-              Unit 22 - Final Projects Pt1
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
-          </li>
-
-          <li class="active">
-            <a
-              href="#module3Submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-            >
-              Unit 23 - Final Projects Pt2
-              <i class="ml-2 fa-lg text-dark fas fa-lock"></i
-            ></a>
-            <ul class="collapse list-unstyled" id="module3Submenu"></ul>
-          </li>
+          <% } %>
         </ul>
       </nav>
 
       <!-- Page Content -->
       <div id="content" class="container text-center mx-auto mt-5">
+        <!-- title -->
+        <h2 class="text-aling-center" id="lesson-title">Getting Set Up</h2>
         <!-- side panel toggle -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <i class="fas fa-align-left"></i>
+              <i class="fas fa-book fa-2x"></i>
             </button>
           </div>
         </nav>
-        <!-- Player -->
-        <video
-          poster="/img/codeskool-vid-cover.png"
-          id="player"
-          playsinline
-          controls
-        >
-          <source
-            src="https://storage.cloud.google.com/video_lessons/intro_computer_console.m4v"
-            type="video/mp4"
-            size="720*30"
-          />
+        <!-- Lesson content -->
+        <div id="lesson-content">
+          <div id="document-lesson">
+            <h3>
+              Make Sure all Systems are a Go <i class="fas fa-check-square"></i>
+            </h3>
+            <ul class="check-list">
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/15kBQ6jsZ4-ag1NOhJ3pvfNT1EIiy08Qa92ulDjpXk3c/edit#heading=h.tnqqizsem0o5"
+                  >Step 1: Get Started</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/1LB_80QN9JngHWl1J5EjyXVGWBi3Vnh4eDiVbdN_k5gY/edit#heading=h.h09g3e9lumwr"
+                  >Step 2: Install Your Tools</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/1BuNcEwS4aqUi6GFMMuqE7MApVfxvtjg1l070HUwJr7w/edit#heading=h.8u7ajmfpb7vp"
+                  >Step 3: Deploy Today!</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/1TLJlu5Xh3Ff4lFZ9KMemXeEd0nqvdM5LKjUMXZzF3Gg/edit#heading=h.vyjmmxq8m0wl"
+                  >Step 4: HTML Basics</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/1CVCZ0HWhE5_UYI02BYEtTCvgeDggI7pHNSmaE_rB5BQ/edit#heading=h.4byay89v2cr8"
+                  >Step 5: HTML Basics</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/1BQ1YnehWGHCaeGtyQRBPZ1Huusug3SCcVryXfKIpv58/edit?usp=sharing"
+                  >Step 6: JavaScript Basics</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/19-I4XgcCossnYQkWUp6acE0Mqt81I5pB3BtTVa93u7g/edit?usp=sharing"
+                  >Step 7: Introduction to Programming Logic</a
+                >
+              </li>
+              <li class="pre-check">
+                <a
+                  href="https://docs.google.com/document/d/1afhht77jXymcwGZF-Qdq52eccGih-A_9qn-GpaP3U94/edit?usp=sharing"
+                  >Step 8: Debugging Your Code</a
+                >
+              </li>
+            </ul>
+          </div>
 
-          <!-- Captions are optional -->
-          <track
-            kind="captions"
-            label="English"
-            src=""
-            default
-            srclang="en"
-            default
-          />
-        </video>
+          <div id="video-lesson">
+            <iframe
+              src=""
+              width="950"
+              height="500"
+              style="border: 1px solid #464646;"
+              allowfullscreen
+              allow="autoplay"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <!-- main ideas button -->
+        <div id="main-ideas">
+          <a href="#"> <i class="fas fa-lightbulb"></i> Main Ideas</a>
+        </div>
+
+        <!-- slack and repo links-->
+        <div id="important-links">
+          <a
+            href="https://github.com/UCF-Coding-Boot-Camp/UCF-VIRT-FSF-PT-11-2019-U-LOL"
+            target="_blank"
+            ><i class="fab fa-github-alt"></i> Repo</a
+          >
+          |
+          <a
+            href="https://app.slack.com/client/TNZ6P59Q9/CSGJ5C1ST"
+            target="_blank"
+            ><i class="fab fa-slack"></i> Questions</a
+          >
+        </div>
+
+        <div id="show-ideas"></div>
       </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -509,5 +274,6 @@
     ></script>
     <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
     <script src="../javascript/player.js"></script>
+    <script src="../javascript/course.js"></script>
   </body>
 </html>

@@ -5,31 +5,31 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true,
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4
+      defaultValue: DataTypes.UUIDV4,
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
-    description: DataTypes.STRING,
+    description: DataTypes.TEXT,
     rating: DataTypes.STRING,
     video: DataTypes.STRING,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
   });
-  Course.associate = function(models) {
+  Course.associate = function (models) {
     // associations can be defined here
     Course.belongsTo(models.User, {
       foreignKey: "UserId",
       as: "creator",
-      onDelete: "CASCADE"
+      onDelete: "CASCADE",
     });
     Course.belongsToMany(models.User, {
       as: "students",
       through: "CourseRegistration",
-      onDelete: "CASCADE"
+      onDelete: "CASCADE",
     });
     Course.hasMany(models.Module, {
-      as: "Modules"
+      as: "Modules",
     });
   };
   return Course;

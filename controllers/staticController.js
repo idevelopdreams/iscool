@@ -12,5 +12,23 @@ exports.register = (req, res) => {
 
 // GET a single course
 exports.singleCourse = (req, res) => {
-  res.render("course", { user: req.session.passport.user });
+  req.context.db.Course.findByPk("56fff529-0164-4896-a628-ab369dad4889", {
+    include: ["creator", "students", "Modules"],
+  })
+    .then(function (course) {
+      req.context.db.Module.findAll({
+        where: "",
+        include: ["creator", "Lessons"],
+      })
+        .then(function (modules) {
+          // return an array of courses and there associations
+          res.render("course", { user: "demo", course, modules });
+        })
+        .catch((err) => {
+          console.log("Error while finding modules: ", err);
+        });
+    })
+    .catch((err) => {
+      console.log("Error fetching Course : ", err);
+    });
 };

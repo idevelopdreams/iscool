@@ -18,6 +18,14 @@
       onload="this.media='all'"
     />
 
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@531&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/landing.css" />
+
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/7e9c096915.js"
@@ -27,57 +35,6 @@
     <title>Learn | Code</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Code Skools</a>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/"
-              >Courses <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="http://codeskools.com/about-us-2/"
-              target="_blank"
-              >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="http://codeskools.com/contact-us/"
-              target="_blank"
-              >Contact</a
-            >
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search ..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
-        <ul class="nav ml-4 ml-auto">
-          <li class="nav-item">
-            <a
-              href=""
-              class="btn btn-primary nav-link my-3 waves-effect waves-light"
-              data-toggle="modal"
-              data-target="#modalLRForm"
-              >LogIn/Register</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
     <!--Modal: Login / Register Form-->
     <div
       class="modal fade"
@@ -202,7 +159,7 @@
                     </div>
 
                     <div class="md-form form-sm mb-4">
-                      <i class="fas fa-birthday-cake "></i>
+                      <i class="fas fa-birthday-cake"></i>
                       <input
                         name="dob"
                         type="text"
@@ -259,7 +216,7 @@
                     </div>
                     <!-- alert confirm password not matching -->
                     <div
-                      style="display: none"
+                      style="display: none;"
                       id="password-alert"
                       class="alert alert-danger"
                       role="alert"
@@ -306,101 +263,34 @@
         <!--/.Content-->
       </div>
     </div>
-    <div class="container text-center mx-auto mt-5">
-      <!-- Content here -->
-      <h1 class="display-2">Code Skools</h1>
-      <p class="lead mb-5">
-        Learning the technology of tomorrow through creation.
-      </p>
-
-      <p class="lead mt-5">
-        Courses
-      </p>
-
-      <div class="card-deck mb-5">
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            style="height: 50%;"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Web Development 101</h5>
-            <p class="card-text">
-              Build complete Web solutions. Master client and server side
-              developement with five hands on projects.
-            </p>
-            <a href="/login"
-              ><button type="button" class="btn btn-primary">
-                Start Course
-              </button></a
-            >
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="https://www.itstarterseries.com/wp-content/uploads/2018/05/how-to-become-a-game-developer.png"
-            class="card-img-top"
-            style="height: 50%;"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Game Development Crash Course</h5>
-            <p class="card-text">
-              Learn how to code by making games from a tiny game engine like
-              phaser to the more robust power house of Unity3D.
-            </p>
-            <a href="/login"
-              ><button type="button" class="btn btn-primary">
-                Start Course
-              </button></a
-            >
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="https://www.cryptotapas.com/wp-content/uploads/2019/03/blockchain.png"
-            style="height: 50%;"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Blockchain Fundementals</h5>
-            <p class="card-text">
-              Build a blockchain from sratch and understand how to create your
-              own cryptocurrency and what makes them so valuable.
-            </p>
-            <a href="/login"
-              ><button type="button" class="btn btn-primary">
-                Start Course
-              </button></a
-            >
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
+    <div class="container center">
+      <div class="jumbotron">
+        <h1 class="display-4">Code Skool</h1>
+        <p class="lead text-white">
+          Lecture Portal
+        </p>
+        <hr class="my-4" />
+        <p class="text-white">
+          To register request a course code from your institute, to find out
+          more visit our
+          <a class="text-dark" href="http://codeskools.com/about-us-2/"
+            >about</a
+          >
+          page. For a demo contact us
+          <a class="text-dark" href="http://codeskools.com/contact-us/"
+            >here.</a
+          >
+        </p>
+        <div class="text-center">
+          <a
+            href=""
+            class="btn btn-primary btn-lg my-3 waves-effect waves-light"
+            data-toggle="modal"
+            data-target="#modalLRForm"
+            >LogIn / Register</a
+          >
         </div>
       </div>
-      <br />
-      <hr class="mt-5" />
-
-      <!-- Footer -->
-      <footer class="my-5 pt-4 text-muted text-center text-small">
-        <p class="mb-1">© 2017-2019 Code Skools</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
     </div>
 
     <!-- Optional JavaScript -->
