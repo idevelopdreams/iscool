@@ -49,6 +49,5 @@ $(document).ready(function () {
 
   $("#main-ideas").click(function () {
     $("#show-ideas").toggle();
-    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
   });
 });
