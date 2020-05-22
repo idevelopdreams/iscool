@@ -1,4 +1,4 @@
-const courses = "code";
+const courses = "admin";
 
 // middleware for restricting route access
 module.exports = (req, res, next) => {
